@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Needleman Wunsch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script src="Javascript/compare.js"></script>
+    <script src="Javascript/Algorithms/NeedlemanWunsch.js"></script>
+    <script src="Javascript/Algorithms/HirschbergsAlgorithm.js"></script>
+    <script src="Javascript/Algorithms/AlignmentAlgorithm.js"></script>
+
+    <script src="Javascript/Utils/Matrix.js"></script>
+    <script src="Javascript/Utils/prototypeUtils.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="explanation">
+            <p>
+                Diese Website vergleicht Nukleotid- oder Aminosäuresequenzen mit Hilfe des Needleman-Wunsch-Algorithmus
+                auf ihre Verwandtschaft
+            </p>
+        </div>
+
+        <div id="inputContainer">
+            <div class="top" id="topLeft">
+                <p>Füge hier bitte die erste Sequenz ein, die du vergleichen möchtest</p>
+            </div>
+
+            <div class="top" id="topRight">
+                <p>Füge hier bitte die zweite Sequenz ein, die du vergleichen möchtest</p>
+            </div>
+
+            <div id="leftInput">
+                <textarea name="input1" id="input1" placeholer="Bitte gib die erste RNA-Sequenz ein!"></textarea>
+            </div>
+
+            <div id="rightInput">
+                <textarea name="input2" id="input2" placeholer="Bitte gib die zweite RNA-Sequenz ein!"></textarea>
+            </div>
+        </div>
+        <div id="button">
+            <a href="#" onclick="parseUserInput()">Vergleichen</a>
+        </div>
+    </div>
+</body>
+
+</html>
