@@ -14,15 +14,15 @@ function compare(input1, input2) {
     let sequence1 = cleanRNASequence(input1);
     let sequence2 = cleanRNASequence(input2);
 
-    //let needlemanWunsch = new NeedlemanWunsch();
-    //let needlemanAlignment = needlemanWunsch.align(sequence1, sequence2);
+    let needlemanWunsch = new NeedlemanWunsch();
+    let needlemanAlignment = needlemanWunsch.align(sequence1, sequence2);
 
-    let hirschbergsAlgorithm = new HirschbergsAlgorithm();
-    let hirschbergAlignment = hirschbergsAlgorithm.align(sequence1, sequence2);
+    //let hirschbergsAlgorithm = new HirschbergsAlgorithm();
+    //let hirschbergAlignment = hirschbergsAlgorithm.align(sequence1, sequence2);
 
     //let alignmentAlgorithm = new AlignmentAlgorithmm();
     //let alignment = alignmentAlgorithm.align(sequence1, sequence2);
-    return hirschbergAlignment;
+    return needlemanAlignment;
 }
 
 function cleanRNASequence(sequence) {
