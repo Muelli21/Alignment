@@ -33,8 +33,18 @@ function showResults(alignment) {
     clearElement(results);
     createHeadline(results, "Results: ", "h2", "resultsHeadline");
 
+    let alignedStringA = alignment.getAlignedStringA();
+    let alignedStringB = alignment.getAlignedStringB();
+    let lengthA = alignedStringA.length;
+    let lengthB = alignedStringB.length;
+
+    if (lengthA == 0 && lengthB == 0) {
+        createTextElement(results, "Both inputs are empty! Please provide two input strings.", "resultsText");
+        return;
+    }
+
     let percentageDiv = createHTMLElement(results, "div", "resultsDiv");
-    createTextElement(percentageDiv, "Percentage: " + alignment.getPercentage(), "resutlsText");
+    createTextElement(percentageDiv, "Percentage: " + alignment.getPercentage(), "resultsText");
 
     showAdvancedResults(alignment);
     toggleDisplayVisibility(results, true);

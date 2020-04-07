@@ -13,23 +13,16 @@ body::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.4);
 }
 
-#container {
-    margin: 3em;
-}
-
-#inputContainer {
-    display: grid;
-    grid-template-areas: 
-    "top top"    
-    "left right";
-    gap: 0 50px;
-    height: 80vh;
-    grid-template-rows: 80px auto;
-    grid-template-columns: 1fr 1fr;
-}
-
 .top {
     text-align: center;
+}
+
+#topLeft {
+    grid-area: topLeft;
+}
+
+#topRight {
+    grid-area: topRight;
 }
 
 #leftInput {
@@ -44,6 +37,10 @@ textarea {
     width: 100%;
     height: 100%;
     resize: none;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 #button {
@@ -54,11 +51,20 @@ textarea {
     text-align: center;
 }
 
-#button a:link, #button a:visited {
+a:link, a:visited {
     color: white;
     text-decoration: none;
     width: 100%;
     background-color: black;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+a:hover {
+    color: black;
+    background-color: white;
+    transition: 0.5s;
+    transition-property: background-color, color;
 }
 
 .resultsContainer {
@@ -67,7 +73,57 @@ textarea {
     font-family: monospace;
 }
 
+#results {
+    margin-bottom: 3em;
+}
+
 .alignedString {
     white-space: nowrap;
     line-height: 0;
+}
+
+footer {
+    margin: 1em;
+    text-align: center;
+}
+
+@media only screen and (max-device-width: 600px) {
+    #container {
+        margin: 1em;
+        margin-top: 3em;
+        text-align: center;
+    }
+
+    #inputContainer {
+        display: grid;
+        grid-template-areas: 
+        "topLeft"    
+        "left"
+        "topRight"
+        "right";
+        gap: 0 5px;
+        height: 100vh;
+        grid-template-rows: 80px auto 80px auto;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (min-device-width: 600px) {
+    #container {
+        margin-top: 3em;
+        margin-bottom: 3em;
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+    
+    #inputContainer {
+        display: grid;
+        grid-template-areas: 
+        "topLeft topRight"    
+        "left right";
+        gap: 0 50px;
+        height: 80vh;
+        grid-template-rows: 80px auto;
+        grid-template-columns: 1fr 1fr;
+    }
 }
