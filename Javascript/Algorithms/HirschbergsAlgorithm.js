@@ -6,14 +6,9 @@ class HirschbergsAlgorithm {
     }
 
     align(sequenceA, sequenceB) {
-        let alignment = this.alignSubsequence(sequenceA, sequenceB);
-        let alignedStringA = alignment[0];
-        let percentage = this.matches / alignedStringA.length;
-        return [
-            ...alignment, 
-            this.matches, 
-            percentage
-        ];
+        let hirschbergsAlignment = this.alignSubsequence(sequenceA, sequenceB);
+        let alignment = new Alignment(hirschbergsAlignment[0], hirschbergsAlignment[1], this.matches);
+        return alignment;
     }
 
     alignSubsequence(sequenceA, sequenceB) {
@@ -24,7 +19,13 @@ class HirschbergsAlgorithm {
         let lengthA = sequenceA.length;
         let lengthB = sequenceB.length;
 
-        if (lengthA == 0) {
+        if (sequenceA == sequenceB) {
+            alignedA = alignedA + sequenceA;
+            alignedB = alignedB + sequenceB;
+            this.matches = this.matches + sequenceA.length;
+        }
+
+        else if (lengthA == 0) {
             for (let columnIndex = 1; columnIndex < lengthB; columnIndex++) {
                 alignedA = alignedA + "-";
                 alignedB = alignedB + sequenceB[columnIndex - 1];
@@ -38,11 +39,11 @@ class HirschbergsAlgorithm {
             }
         }
 
-        else if (lengthA == 1) {
-            let alignment = this.needlemanWunsch.align(sequenceA, sequenceB);
-            alignedA = alignment[0];
-            alignedB = alignment[1];
-            let matches = alignment[2];
+        else if (lengthA == 1 || lengthB == 1) {
+            let needlemanAlignment = this.needlemanWunsch.align(sequenceA, sequenceB);
+            alignedA = needlemanAlignment.getAlignedStringA();
+            alignedB = needlemanAlignment.getAlignedStringB();
+            let matches = needlemanAlignment.getMatches();
             this.matches = this.matches + matches;
         }
 

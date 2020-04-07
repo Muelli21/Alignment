@@ -17,10 +17,6 @@ body::-webkit-scrollbar-thumb {
     margin: 3em;
 }
 
-#explanation {
-    text-align: center;
-}
-
 #inputContainer {
     display: grid;
     grid-template-areas: 
@@ -63,4 +59,15 @@ textarea {
     text-decoration: none;
     width: 100%;
     background-color: black;
+}
+
+.resultsContainer {
+    overflow-x: scroll;
+    font-family: monospace;
+}
+
+.alignedString {
+    float: left; 
+    white-space: nowrap;
+    line-height: 0;
 }

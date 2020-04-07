@@ -3,20 +3,17 @@ class NeedlemanWunsch {
         this.sequenceA;
         this.sequenceB;
         this.matrixObject = null;
-        this.alignment;
         this.mismatchPenalty = -1;
     }
 
     align(sequenceA, sequenceB) {
-
         if (sequenceA == sequenceB) {
-            return [sequenceA, sequenceB, sequenceA.length, 1];
+            return new Alignment(sequenceA, sequenceB, sequenceA.length);
         }
 
         this.matrixObject = this.initializeMatrix(sequenceA, sequenceB);
-        this.alignment = this.calculateAlignment();
-        this.matrixObject = null;
-        return this.alignment;
+        let alignment = this.calculateAlignment();
+        return new Alignment(alignment[0], alignment[1], alignment[2]);
     }
 
     initializeMatrix(sequenceA, sequenceB) {
@@ -105,14 +102,10 @@ class NeedlemanWunsch {
             }
         }
 
-        this.matrixObject = null;
-
-        let percentage = matches / alignedStringA.length;
         return [
             alignedStringA, 
             alignedStringB, 
             matches, 
-            percentage
         ];
     }
 

@@ -9,32 +9,34 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
 
     <script src="Javascript/compare.js"></script>
+
+    <script src="Javascript/Algorithms/Alignment.js"></script>
     <script src="Javascript/Algorithms/NeedlemanWunsch.js"></script>
     <script src="Javascript/Algorithms/HirschbergsAlgorithm.js"></script>
     <script src="Javascript/Algorithms/AlignmentAlgorithm.js"></script>
 
     <script src="Javascript/Utils/Matrix.js"></script>
     <script src="Javascript/Utils/prototypeUtils.js"></script>
+    <script src="Javascript/Utils/elementUtils.js"></script>
+    <script src="Javascript/Utils/visibilityUtils.js"></script>
 
 </head>
 
 <body>
     <div id="container">
-
+        <h1>Sequence Alignments</h1>
         <div id="explanation">
             <p>
-                Diese Website vergleicht Nukleotid- oder Aminosäuresequenzen mit Hilfe des Needleman-Wunsch-Algorithmus
-                auf ihre Verwandtschaft
+                This webpage compares strings, aminoacid and nucleotide-seuqences regarding their similaritiy using the Needleman-Wunsch-Algorithm and Hirschberg's Algorithm.
             </p>
         </div>
-
         <div id="inputContainer">
             <div class="top" id="topLeft">
-                <p>Füge hier bitte die erste Sequenz ein, die du vergleichen möchtest</p>
+                <p>Please insert your first sequence here!</p>
             </div>
 
             <div class="top" id="topRight">
-                <p>Füge hier bitte die zweite Sequenz ein, die du vergleichen möchtest</p>
+                <p>Please insert your second sequence here!</p>
             </div>
 
             <div id="leftInput">
@@ -46,7 +48,10 @@
             </div>
         </div>
         <div id="button">
-            <a href="#" onclick="parseUserInput()">Vergleichen</a>
+            <a href="#" onclick="parseUserInput()">Compare</a>
+        </div>
+        <div id = "results">
+
         </div>
     </div>
 </body>
