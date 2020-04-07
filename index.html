@@ -7,6 +7,11 @@
     <title>Needleman Wunsch</title>
     <link rel="shortcut icon" type="image/x-icon" href="Icon.png">
 
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="Icon.png">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
     <link rel="stylesheet" type="text/css" href="style.css" />
 
     <script src="Javascript/compare.js"></script>
@@ -29,8 +34,8 @@
         <h1 class="font2">SEQUENCE ALIGNMENTS</h1>
         <div id="explanation">
             <p>
-                This webpage compares strings, aminoacid and nucleotide-seuqences regarding their similaritiy using the
-                Needleman-Wunsch-Algorithm and Hirschberg's Algorithm.
+                This webpage compares strings, amino-acid- and nucleotide-seuqences regarding their similarity. To do so, the
+                Needleman-Wunsch-Algorithm and Hirschberg's Algorithm are used.
             </p>
         </div>
         <div id="inputContainer">
@@ -43,11 +48,11 @@
             </div>
 
             <div id="leftInput">
-                <textarea name="input1" id="input1" placeholer="Bitte gib die erste RNA-Sequenz ein!"></textarea>
+                <textarea name="input1" id="input1"></textarea>
             </div>
 
             <div id="rightInput">
-                <textarea name="input2" id="input2" placeholer="Bitte gib die zweite RNA-Sequenz ein!"></textarea>
+                <textarea name="input2" id="input2"></textarea>
             </div>
         </div>
         <div id="button">

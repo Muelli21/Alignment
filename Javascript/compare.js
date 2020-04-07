@@ -44,19 +44,7 @@ function showResults(alignment) {
     }
 
     let percentageDiv = createHTMLElement(results, "div", "resultsDiv");
-    createTextElement(percentageDiv, "Percentage: " + alignment.getPercentage(), "resultsText");
-
-    showAdvancedResults(alignment);
-    toggleDisplayVisibility(results, true);
-}
-
-function showAdvancedResults(alignment) {
-
-    let alignedStringA = alignment.getAlignedStringA();
-    let alignedStringB = alignment.getAlignedStringB();
-    let lengthA = alignedStringA.length;
-
-    let results = document.getElementById("results");
+    createTextElement(percentageDiv, "Percentage: " + (alignment.getPercentage() * 100) + "%", "resultsText");
     createHeadline(results, "Aligned strings", "h3", "resultsHeadline");
 
     let alignmentString = "";
@@ -83,6 +71,8 @@ function showAdvancedResults(alignment) {
     createTextElement(stringsContainer, alignmentString, "alignedString");
     stringsContainer.appendChild(document.createElement("br"));
     createTextElement(stringsContainer, alignedStringB, "alignedString");
+
+    toggleDisplayVisibility(results, true);
 }
 
 function cleanRNASequence(sequence) {

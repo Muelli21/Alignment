@@ -29,6 +29,15 @@ body::-webkit-scrollbar-thumb {
 
 .top {
     text-align: center;
+    position: relative;
+}
+
+.top p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
 }
 
 #topLeft {
@@ -51,6 +60,8 @@ textarea {
     width: 100%;
     height: 100%;
     resize: none;
+    border-color: rgba(0, 0, 0, 0.4);
+    border-width: 1px;
 
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -117,7 +128,7 @@ footer {
         "right";
         gap: 0 5px;
         height: 100vh;
-        grid-template-rows: 80px auto 80px auto;
+        grid-template-rows: 10vh auto 10vh auto;
         grid-template-columns: 1fr;
     }
 }
@@ -137,7 +148,7 @@ footer {
         "left right";
         gap: 0 50px;
         height: 80vh;
-        grid-template-rows: 80px auto;
+        grid-template-rows: 10vh auto;
         grid-template-columns: 1fr 1fr;
     }
 }
