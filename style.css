@@ -63,11 +63,11 @@ textarea {
 
 .resultsContainer {
     overflow-x: scroll;
+    overflow-y: hidden;
     font-family: monospace;
 }
 
 .alignedString {
-    float: left; 
     white-space: nowrap;
     line-height: 0;
 }

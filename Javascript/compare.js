@@ -56,11 +56,11 @@ function showAdvancedResults(alignment) {
 
         if (characterA == "-" || characterB == "-") {
             alignmentString = alignmentString + "|";
-        } 
+        }
 
         else if (characterA == characterB) {
             alignmentString = alignmentString + "=";
-        } 
+        }
 
         else {
             alignmentString = alignmentString + "≠";
@@ -69,7 +69,9 @@ function showAdvancedResults(alignment) {
 
     let stringsContainer = createHTMLElement(results, "div", "resultsContainer");
     createTextElement(stringsContainer, alignedStringA, "alignedString");
+    stringsContainer.appendChild(document.createElement("br"));
     createTextElement(stringsContainer, alignmentString, "alignedString");
+    stringsContainer.appendChild(document.createElement("br"));
     createTextElement(stringsContainer, alignedStringB, "alignedString");
 }
 
