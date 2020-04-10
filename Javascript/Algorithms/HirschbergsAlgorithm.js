@@ -19,6 +19,8 @@ class HirschbergsAlgorithm {
         let lengthA = sequenceA.length;
         let lengthB = sequenceB.length;
 
+        debugger;
+
         if (sequenceA == sequenceB) {
             alignedA = alignedA + sequenceA;
             alignedB = alignedB + sequenceB;
@@ -26,14 +28,14 @@ class HirschbergsAlgorithm {
         }
 
         else if (lengthA == 0) {
-            for (let columnIndex = 1; columnIndex < lengthB; columnIndex++) {
+            for (let columnIndex = 1; columnIndex <= lengthB; columnIndex++) {
                 alignedA = alignedA + "-";
                 alignedB = alignedB + sequenceB[columnIndex - 1];
             }
         }
 
         else if (lengthB == 0) {
-            for (let rowIndex = 1; rowIndex < lengthA; rowIndex++) {
+            for (let rowIndex = 1; rowIndex <= lengthA; rowIndex++) {
                 alignedA = alignedA + sequenceA[rowIndex - 1];
                 alignedB = alignedB + "-";
             }
