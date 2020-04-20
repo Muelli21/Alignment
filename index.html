@@ -5,17 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Needleman Wunsch</title>
-    <link rel="shortcut icon" type="image/x-icon" href="Icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="Resources/Icon.png">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="apple-touch-icon" href="Icon.png">
+    <link rel="apple-touch-icon" href="Resources/Icon.png">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 
     <link rel="stylesheet" type="text/css" href="style.css" />
 
-    <script src="Javascript/compare.js"></script>
-
+    <script src="Javascript/Algorithms/Algorithm.js"></script>
     <script src="Javascript/Algorithms/Alignment.js"></script>
     <script src="Javascript/Algorithms/NeedlemanWunsch.js"></script>
     <script src="Javascript/Algorithms/HirschbergsAlgorithm.js"></script>
@@ -26,15 +25,43 @@
     <script src="Javascript/Utils/elementUtils.js"></script>
     <script src="Javascript/Utils/visibilityUtils.js"></script>
 
+    <script src="Javascript/compare.js"></script>
+
 </head>
 
-<body>
+<body class="light">
     <div id="colorBanner"></div>
     <div id="container">
-        <h1 class="font2">SEQUENCE ALIGNMENTS</h1>
+        <div id="navbar">
+            <h1 class="font2">SEQUENCE ALIGNMENTS</h1>
+            <div id="iconDiv">
+                <img src="Resources/SettingsIcon.png" alt="Settings Icon">
+            </div>
+            <div class="dropdown">
+                <a class="menuItem" href="#" onclick="toggleDarkMode()">
+                    <div class="menuIconDiv">
+                        <img src="Resources/DarkmodeIcon.png" alt="Darkmode Icon">
+                    </div>
+                    <p id="viewMode">Darkmode</p>
+                </a>
+                <a class="menuItem" href="#" onclick="setAlgorithm('needleman')">
+                    <div class="menuIconDiv">
+                        <img id="needlemanCheckmark" src="Resources/UncheckMarkIcon.png" alt="Check Mark Icon">
+                    </div>
+                    <p>Needleman Wunsch</p>
+                </a>
+                <a class="menuItem" href="#" onclick="setAlgorithm('hirschbergs')">
+                    <div class="menuIconDiv">
+                        <img id="hirschbergsCheckmark" src="Resources/CheckMarkIcon.png" alt="Check Mark Icon">
+                    </div>
+                    <p>Hirschberg's Algorithm</p>
+                </a>
+            </div>
+        </div>
         <div id="explanation">
             <p>
-                This webpage compares strings, amino-acid- and nucleotide-seuqences regarding their similarity. To do so, the
+                This webpage compares strings, amino-acid- and nucleotide-seuqences regarding their similarity. To do
+                so, the
                 Needleman-Wunsch-Algorithm and Hirschberg's Algorithm are used.
             </p>
         </div>
@@ -56,7 +83,7 @@
             </div>
         </div>
         <div id="button">
-            <a href="#" onclick="parseUserInput()" class = "font2">Compare</a>
+            <a href="#" onclick="parseUserInput()" class="font2">Compare</a>
         </div>
         <div id="results" class="font2">
 

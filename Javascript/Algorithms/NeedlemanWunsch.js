@@ -8,12 +8,12 @@ class NeedlemanWunsch {
 
     align(sequenceA, sequenceB) {
         if (sequenceA == sequenceB) {
-            return new Alignment(sequenceA, sequenceB, sequenceA.length);
+            return new Alignment(Algorithm.NEEDLEMAN_WUNSCH, sequenceA, sequenceB, sequenceA.length);
         }
 
         this.matrixObject = this.initializeMatrix(sequenceA, sequenceB);
         let alignment = this.calculateAlignment();
-        return new Alignment(alignment[0], alignment[1], alignment[2]);
+        return new Alignment(Algorithm.NEEDLEMAN_WUNSCH, alignment[0], alignment[1], alignment[2]);
     }
 
     initializeMatrix(sequenceA, sequenceB) {
@@ -103,9 +103,9 @@ class NeedlemanWunsch {
         }
 
         return [
-            alignedStringA, 
-            alignedStringB, 
-            matches, 
+            alignedStringA,
+            alignedStringB,
+            matches,
         ];
     }
 

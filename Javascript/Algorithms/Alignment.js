@@ -1,6 +1,8 @@
 class Alignment {
-    constructor(alignedStringA, alignedStringB, matches) {
+    constructor(algorithm, alignedStringA, alignedStringB, matches) {
 
+        this.algorithm = algorithm;
+        
         let regExpression = /(\r\n|\n|\r)/gm;
         this.alignedStringA = alignedStringA.replace(regExpression, "");
         this.alignedStringB = alignedStringB.replace(regExpression, "");

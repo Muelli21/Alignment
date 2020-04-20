@@ -7,7 +7,7 @@ class HirschbergsAlgorithm {
 
     align(sequenceA, sequenceB) {
         let hirschbergsAlignment = this.alignSubsequence(sequenceA, sequenceB);
-        let alignment = new Alignment(hirschbergsAlignment[0], hirschbergsAlignment[1], this.matches);
+        let alignment = new Alignment(Algorithm.HIRSCHBERGS, hirschbergsAlignment[0], hirschbergsAlignment[1], this.matches);
         return alignment;
     }
 
@@ -18,8 +18,6 @@ class HirschbergsAlgorithm {
 
         let lengthA = sequenceA.length;
         let lengthB = sequenceB.length;
-
-        debugger;
 
         if (sequenceA == sequenceB) {
             alignedA = alignedA + sequenceA;

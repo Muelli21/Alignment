@@ -26,7 +26,7 @@ function toggleVisibilityUsingHeight(element, boolean) {
 
 function toggleDisplayVisibility(element, boolean) {
     if (boolean) {
-        element.style.display = "block";
+        element.style.display = "inline";
     } else {
         element.style.display = "none";
     }
