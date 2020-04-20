@@ -101,13 +101,13 @@ function setAlgorithm(type) {
     switch (type) {
         case "needleman":
             algorithm = Algorithm.NEEDLEMAN_WUNSCH;
-            needlemanCheckmark.src = "Resources/CheckmarkIcon.png";
+            needlemanCheckmark.src = "Resources/CheckMarkIcon.png";
             hirschbergCheckMark.src = "Resources/UncheckMarkIcon.png";
             break;
         case "hirschbergs":
             algorithm = Algorithm.HIRSCHBERGS;
             hirschbergCheckMark.src = "Resources/CheckMarkIcon.png";
-            needlemanCheckmark.src = "Resources/UncheckmarkIcon.png";
+            needlemanCheckmark.src = "Resources/UncheckMarkIcon.png";
             break;
     }
 }
