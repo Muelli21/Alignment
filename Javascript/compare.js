@@ -2,6 +2,8 @@ var showingSettings = false;
 var darkMode = false;
 var algorithm = Algorithm.HIRSCHBERGS;
 
+document.addEventListener("touchstart", function() {}, true);
+
 function parseUserInput() {
     let input1Textarea = document.getElementById("input1");
     let input2Textarea = document.getElementById("input2");
